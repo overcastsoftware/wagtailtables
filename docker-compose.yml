@@ -1,0 +1,36 @@
+version: '3'
+
+volumes:
+  postgres-data:
+  node_modules:
+  
+services:
+  web:
+    container_name: "wagtailtablesweb"
+    build: ./
+    working_dir: /code/wagtailtables_demo
+    command: bash -c "./manage.py migrate && ./manage.py runserver 0.0.0.0:8000"
+    restart: "no"
+    volumes:
+      - ./wagtailtables_demo:/code/wagtailtables_demo:delegated,rw
+      - ./wagtailtables:/code/wagtailtables/wagtailtables:delegated,rw
+    ports:
+      - "8000:8000"
+      - 3000:3000
+    environment:
+      DATABASE_URL: "postgres://wagtail:changeme@db/wagtail"
+      PYTHONPATH: "/code/wagtail:/code/wagtailtables_demo:$PYTHONPATH"
+    depends_on:
+      - db
+  db:
+    container_name: "wagtailtablesdb"
+    image: postgres:12.3-alpine
+    environment:
+      POSTGRES_USER: wagtail
+      POSTGRES_DB: wagtail
+      POSTGRES_PASSWORD: changeme
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: "no"
+    expose:
+      - "5432"

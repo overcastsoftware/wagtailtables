@@ -1,0 +1,33 @@
+{% load wagtailtables_tags %}
+<table class="{{self.table_type}}">
+    {% get_table_data self.table_data as t_data %}
+    {% if self.header_row %}
+    <thead>
+        <tr>
+            {% for col in t_data.data.0 %}
+                <th style="{% get_styles t_data.styles 0 forloop.counter0 %}">{{col}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    {% endif %}
+    <tbody>
+    {% for row in t_data.data %}
+    {% with rowcounter=forloop.counter0 %}
+    {% if self.header_row and rowcounter == 0 %}
+    {% else %}
+    <tr>
+        {% for col in row %}
+            {% with colcounter=forloop.counter0 %}
+            {% if self.header_col and colcounter == 0 %}
+            <th style="{% get_styles t_data.styles rowcounter colcounter %}">{{col|safe}}</th>
+            {% else %}
+            <td style="{% get_styles t_data.styles rowcounter colcounter %}">{{col|safe}}</td>
+            {% endif %}
+            {% endwith %}
+        {% endfor %}
+    </tr>
+    {% endif %}
+    {% endwith %}
+    {% endfor %}
+    </tbody>
+</table>
