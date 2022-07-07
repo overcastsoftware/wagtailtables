@@ -1,3 +1,4 @@
+import json
 from django import forms
 from django.conf import settings
 from django.utils.functional import cached_property
@@ -24,10 +25,18 @@ class TableBlock(StructBlock):
     header_col = BooleanBlock(required=False)
     table_type = ChoiceBlock(choices=get_choices, default=get_choices()[0][0])
 
+    def get_searchable_content(self, value):
+        data = json.loads(value['table_data'])
+        if isinstance(data, dict) and 'data' in data.keys():
+            return data['data']
+        return ""
+
     class Meta:
         icon = 'fa-table'
         label = 'Table Block'
         template = 'wagtailtables/table_block.html'
+
+        
 
 
 class TableAdapter(StructBlockAdapter):
