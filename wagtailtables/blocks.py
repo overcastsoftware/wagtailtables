@@ -9,9 +9,9 @@ from wagtail import VERSION
 
 # Backwards compatibility
 if VERSION[0] < 3:
-    from wagtail.blocks.struct_block import StructBlockAdapter
+    from wagtail.core.blocks.struct_block import StructBlockAdapter
 else:
-    from wagtail.struct_block import StructBlockAdapter
+    from wagtail.blocks.struct_block import StructBlockAdapter
 
 
 def get_choices():
