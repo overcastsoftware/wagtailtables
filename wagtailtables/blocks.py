@@ -2,10 +2,16 @@ import json
 from django import forms
 from django.conf import settings
 from django.utils.functional import cached_property
-from wagtail.core.blocks import (BooleanBlock, CharBlock, ChoiceBlock,
+from wagtail.blocks import (BooleanBlock, CharBlock, ChoiceBlock,
                                  StructBlock, TextBlock)
-from wagtail.core.blocks.struct_block import StructBlockAdapter
 from wagtail.core.telepath import register
+from wagtail import VERSION
+
+# Backwards compatibility
+if VERSION[0] < 3:
+    from wagtail.blocks.struct_block import StructBlockAdapter
+else:
+    from wagtail.struct_block import StructBlockAdapter
 
 
 def get_choices():
@@ -35,8 +41,6 @@ class TableBlock(StructBlock):
         icon = 'fa-table'
         label = 'Table Block'
         template = 'wagtailtables/table_block.html'
-
-        
 
 
 class TableAdapter(StructBlockAdapter):
