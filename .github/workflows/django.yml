@@ -16,7 +16,7 @@ jobs:
           - python: '3.9'
             wagtail: '2.15.5'
           - python: '3.10'
-            wagtail: '4.0'
+            wagtail: '>=4.0,<4.1'
 
     runs-on: 'ubuntu-latest'
 
