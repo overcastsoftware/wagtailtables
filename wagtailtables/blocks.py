@@ -2,17 +2,19 @@ import json
 from django import forms
 from django.conf import settings
 from django.utils.functional import cached_property
-from wagtail.blocks import (BooleanBlock, CharBlock, ChoiceBlock,
-                                 StructBlock, TextBlock)
+
 from wagtail.core.telepath import register
 from wagtail import VERSION
 
 # Backwards compatibility
 if VERSION[0] < 3:
     from wagtail.core.blocks.struct_block import StructBlockAdapter
+    from wagtail.core.blocks import (BooleanBlock, CharBlock, ChoiceBlock,
+                                 StructBlock, TextBlock)
 else:
     from wagtail.blocks.struct_block import StructBlockAdapter
-
+    from wagtail.blocks import (BooleanBlock, CharBlock, ChoiceBlock,
+                                 StructBlock, TextBlock)
 
 def get_choices():
     default_choices = (
