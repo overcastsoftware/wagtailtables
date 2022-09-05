@@ -56,4 +56,4 @@ jobs:
           pip install "psycopg2>=2.6"
           pip install "${{ matrix.wagtail }}"
       - name: Run migrations
-        run: python manage.py migrate
+        run: cd wagtailtables_demo && python manage.py migrate
