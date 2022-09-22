@@ -16,6 +16,18 @@ else:
     from wagtail.blocks import (BooleanBlock, CharBlock, ChoiceBlock,
                                  StructBlock, TextBlock)
 
+TOOLBAR = [
+    {'type': 'i','content': 'format_align_left', 'k': 'text-align', 'v': 'left'},
+    {'type': 'i','content': 'format_align_center', 'k':'text-align', 'v':'center'},
+    {'type': 'i','content': 'format_align_right', 'k': 'text-align', 'v': 'right'},
+    {'type': 'i','content': 'format_bold', 'k': 'font-weight', 'v': 'bold'},
+    {'type': 'i','content': 'format_italic', 'k': 'font-style', 'v': 'italic'},
+    {'type': 'i','content': 'border_left', 'k': 'border-left', 'v': '1px solid'},
+    {'type': 'i','content': 'border_right', 'k': 'border-right', 'v': '1px solid'},
+    {'type': 'i','content': 'border_top', 'k': 'border-top', 'v': '1px solid'},
+    {'type': 'i','content': 'border_bottom', 'k': 'border-bottom', 'v': '1px solid'},
+]
+
 def get_choices():
     default_choices = (
         ('table', 'Table'),
@@ -43,10 +55,18 @@ class TableBlock(StructBlock):
         icon = 'fa-table'
         label = 'Table Block'
         template = 'wagtailtables/table_block.html'
+        toolbar = TOOLBAR
 
 
 class TableAdapter(StructBlockAdapter):
     js_constructor = 'streams.blocks.TableBlock'
+
+    def js_args(self, block):
+        result = super(TableAdapter, self).js_args(block)
+        meta = result[2]
+        meta['toolbar'] = block.meta.toolbar
+        result[2] = meta
+        return result
 
     @cached_property
     def media(self):
