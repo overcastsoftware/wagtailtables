@@ -80,9 +80,13 @@ class ContentBlocks(StreamBlock):
 ```
 
 `type` should for now always be `i` for icon, we will provide more types later
+
 `content` defines the icon (from material icons) [click here for all possible keys](https://fonts.google.com/icons?selected=Material+Icons)
+
 `k` means the style that should be apply to the cell
+
 `v` means the value of the style should be apply to the cell
+
 
 ## Dependencies
 * This project relies on [Jspreadsheet Community Edition](https://bossanova.uk/jspreadsheet/v4/) for data entry and manipulation. 
