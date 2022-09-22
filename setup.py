@@ -23,7 +23,7 @@ documentation_extras = [
 
 setup(
     name='wagtailtables',
-    version='0.2',
+    version='0.2.1',
     packages=['wagtailtables'],
     include_package_data=True,
     license='MIT',
