@@ -28,62 +28,7 @@ class TableDefinition extends window.wagtailStreamField.blocks.StructBlockDefini
       columnSorting: false,
       defaultColAlign: 'left',
       defaultColWidth: 200,
-      toolbar: [
-        {
-          type: 'i',
-          content: 'format_align_left',
-          k: 'text-align',
-          v: 'left'
-        },
-        {
-          type:'i',
-          content:'format_align_center',
-          k:'text-align',
-          v:'center'
-        },
-        {
-          type: 'i',
-          content: 'format_align_right', 
-          k: 'text-align',
-          v: 'right'
-        },
-        {
-          type: 'i',
-          content: 'format_bold', 
-          k: 'font-weight',
-          v: 'bold'
-        },
-        {
-          type: 'i',
-          content: 'format_italic',
-          k: 'font-style',
-          v: 'italic'
-        },
-        {
-          type: 'i',
-          content: 'border_left',
-          k: 'border-left',
-          v: '1px solid'
-        },
-        {
-          type: 'i',
-          content: 'border_right',
-          k: 'border-right',
-          v: '1px solid'
-        },
-        {
-          type: 'i',
-          content: 'border_top',
-          k: 'border-top',
-          v: '1px solid'
-        },
-        {
-          type: 'i',
-          content: 'border_bottom',
-          k: 'border-bottom',
-          v: '1px solid'
-        },
-      ],
+      toolbar: this.meta.toolbar,
       onevent: changed,
     }
 
