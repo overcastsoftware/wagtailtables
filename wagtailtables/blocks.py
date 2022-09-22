@@ -66,7 +66,6 @@ class TableAdapter(StructBlockAdapter):
         meta = result[2]
         meta['toolbar'] = block.meta.toolbar
         result[2] = meta
-        print(meta)
         return result
 
     @cached_property
