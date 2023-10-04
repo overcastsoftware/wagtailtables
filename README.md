@@ -83,9 +83,9 @@ class ContentBlocks(StreamBlock):
 
 `content` defines the icon (from material icons) [click here for all possible keys](https://fonts.google.com/icons?selected=Material+Icons)
 
-`k` means the style that should be apply to the cell
+`k` means the style that should be applied to the cell
 
-`v` means the value of the style should be apply to the cell
+`v` means the value of the style should be applied to the cell
 
 
 ## Dependencies
