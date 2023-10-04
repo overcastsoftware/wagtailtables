@@ -4,17 +4,10 @@ from django.conf import settings
 from django.utils.functional import cached_property
 
 from wagtail.telepath import register
-from wagtail import VERSION
 
-# Backwards compatibility
-if VERSION[0] < 3:
-    from wagtail.blocks.struct_block import StructBlockAdapter
-    from wagtail.blocks import (BooleanBlock, CharBlock, ChoiceBlock,
-                                 StructBlock, TextBlock)
-else:
-    from wagtail.blocks.struct_block import StructBlockAdapter
-    from wagtail.blocks import (BooleanBlock, CharBlock, ChoiceBlock,
-                                 StructBlock, TextBlock)
+from wagtail.blocks.struct_block import StructBlockAdapter
+from wagtail.blocks import (BooleanBlock, CharBlock, ChoiceBlock,
+                                StructBlock, TextBlock)
 
 TOOLBAR = [
     {'type': 'i','content': 'format_align_left', 'k': 'text-align', 'v': 'left'},
