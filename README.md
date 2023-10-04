@@ -90,3 +90,13 @@ class ContentBlocks(StreamBlock):
 
 ## Dependencies
 * This project relies on [Jspreadsheet Community Edition](https://bossanova.uk/jspreadsheet/v4/) for data entry and manipulation. 
+
+
+# Release notes
+
+## Version 0.2.2
+* Added support for Wagtail 5
+* Removed support for Wagtail <3
+
+## Version 0.2.1
+* Added support for a customizable toolbar
