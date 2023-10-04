@@ -22,13 +22,22 @@ class TableDefinition extends window.wagtailStreamField.blocks.StructBlockDefini
         dataSetField.value = "{\"data\": "+JSON.stringify(spread.getData())+", \"style\": "+JSON.stringify(spread.getStyle())+"}";
       }
     }
+
+    let merge_cells = function(table, a, b, c){
+      debugger
+    }
+
+    let toolbar = this.meta.toolbar
+    let merge = {type: 'i', content: 'table_rows', onclick: merge_cells}
+    toolbar.push(merge)
+
     var options = {
       tableOverflow: true,
       tableWidth: "100%",
       columnSorting: false,
       defaultColAlign: 'left',
       defaultColWidth: 200,
-      toolbar: this.meta.toolbar,
+      toolbar: toolbar,
       onevent: changed,
     }
 
