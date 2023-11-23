@@ -29,7 +29,7 @@ setup(
     license='MIT',
     description='jSpreadsheet table blocks for Wagtail',
     long_description=README,
-    url='https://github.com/overcast/wagtailtables/',
+    url='https://github.com/overcastsoftware/wagtailtables/',
     author='Overcast',
     author_email='hallo@overcast.is',
     long_description_content_type="text/markdown",
