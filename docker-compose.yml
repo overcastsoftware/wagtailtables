@@ -24,7 +24,7 @@ services:
       - db
   db:
     container_name: "wagtailtablesdb"
-    image: postgres:12.3-alpine
+    image: postgres:17-alpine
     environment:
       POSTGRES_USER: wagtail
       POSTGRES_DB: wagtail
