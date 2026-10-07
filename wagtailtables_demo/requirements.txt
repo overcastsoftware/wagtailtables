@@ -1,5 +1,5 @@
-Django>=4.0,<4.3
-wagtail<5.2
-dj-database-url==0.4.1
-psycopg2-binary>=2.7,<3.0
-debugpy==1.5.1
+Django>=5.2,<6.2
+wagtail>=7.0,<8.1
+dj-database-url>=2.0,<4.0
+psycopg2-binary>=2.9,<3.0
+debugpy>=1.8

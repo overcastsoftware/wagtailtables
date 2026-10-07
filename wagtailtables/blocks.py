@@ -3,7 +3,10 @@ from django import forms
 from django.conf import settings
 from django.utils.functional import cached_property
 
-from wagtail.telepath import register
+try:
+    from wagtail.admin.telepath import register
+except ImportError:  # Wagtail < 7.1
+    from wagtail.telepath import register
 
 from wagtail.blocks.struct_block import StructBlockAdapter
 from wagtail.blocks import (BooleanBlock, CharBlock, ChoiceBlock,
@@ -45,7 +48,7 @@ class TableBlock(StructBlock):
         return ""
 
     class Meta:
-        icon = 'fa-table'
+        icon = 'table'
         label = 'Table Block'
         template = 'wagtailtables/table_block.html'
         toolbar = TOOLBAR

@@ -33,7 +33,7 @@ class HomePage(Page):
     body = StreamField(ContentBlocks())
 
     content_panels = Page.content_panels + [
-        StreamFieldPanel('body'),
+        FieldPanel('body'),
     ]
 ```
 
@@ -93,6 +93,11 @@ class ContentBlocks(StreamBlock):
 
 
 # Release notes
+
+## Version 0.3.0
+* Added support for Wagtail 8
+* Removed support for Wagtail <7
+* Use Wagtail's built-in `table` icon for the block
 
 ## Version 0.2.2
 * Added support for Wagtail 5

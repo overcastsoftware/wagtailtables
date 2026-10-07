@@ -10,7 +10,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 # Package dependencies
 install_requires = [
-    'wagtail>=3.0',
+    'wagtail>=7.0',
 ]
 
 # Testing dependencies
@@ -23,7 +23,7 @@ documentation_extras = [
 
 setup(
     name='wagtailtables',
-    version='0.2.2',
+    version='0.3.0',
     packages=['wagtailtables'],
     include_package_data=True,
     license='MIT',
@@ -37,9 +37,8 @@ setup(
         'Environment :: Web Environment',
         'Framework :: Django',
         'Framework :: Wagtail',
-        'Framework :: Wagtail :: 3',
-        'Framework :: Wagtail :: 4',
-        'Framework :: Wagtail :: 5',
+        'Framework :: Wagtail :: 7',
+        'Framework :: Wagtail :: 8',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
@@ -47,6 +46,9 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
+        'Programming Language :: Python :: 3.14',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
